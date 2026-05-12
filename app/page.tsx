@@ -113,6 +113,11 @@ export default function HomePage() {
           <p className="hero-subtitle">{tr.heroSubtitle}</p>
           <h1>{tr.heroTitle}</h1>
           <p>{tr.heroDesc}</p>
+          <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginTop: '0.75rem' }}>
+            <a href="https://buymeacoffee.com/jarek.lacina" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)' }}>
+              ☕ {tr.buyMeCoffee}
+            </a>
+          </p>
         </div>
 
         <div className="app-container">

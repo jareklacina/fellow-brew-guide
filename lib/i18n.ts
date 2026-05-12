@@ -121,6 +121,9 @@ export const t = {
     placeholderBtn: 'Generate Brew Profile',
     placeholderTo: 'to get started.',
 
+    // Buy me a coffee
+    buyMeCoffee: 'If you like it, you can buy me a coffee.',
+
     // Toast
     saved: 'saved!',
   },
@@ -244,6 +247,9 @@ export const t = {
     placeholderText: 'Vyplň parametry kávy a klikni na',
     placeholderBtn: 'Vygenerovat brew profil',
     placeholderTo: 'pro začátek.',
+
+    // Buy me a coffee
+    buyMeCoffee: 'Jestli se ti apka líbí, můžeš mi koupit kafe.',
 
     // Toast
     saved: 'uloženo!',
