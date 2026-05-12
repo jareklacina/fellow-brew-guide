@@ -1,4 +1,4 @@
-import { supabase, getSessionId } from './supabase'
+import { getSupabase, getSessionId } from './supabase'
 import type { BrewInput, BrewProfile } from './engine'
 
 export interface SavedProfile {
@@ -29,7 +29,9 @@ function setLocalProfiles(profiles: SavedProfile[]) {
 // ── Supabase helpers ───────────────────────────────────────────────────────
 
 export async function syncToSupabase(profile: SavedProfile) {
-  await supabase.from('brew_profiles').insert({
+  const sb = getSupabase()
+  if (!sb) return
+  await sb.from('brew_profiles').insert({
     id:         profile.id,
     session_id: getSessionId(),
     name:       profile.name,
@@ -39,7 +41,9 @@ export async function syncToSupabase(profile: SavedProfile) {
 }
 
 export async function deleteFromSupabase(id: string) {
-  await supabase.from('brew_profiles').delete().eq('id', id).eq('session_id', getSessionId())
+  const sb = getSupabase()
+  if (!sb) return
+  await sb.from('brew_profiles').delete().eq('id', id).eq('session_id', getSessionId())
 }
 
 // ── Public API ─────────────────────────────────────────────────────────────
